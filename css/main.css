@@ -1,0 +1,164 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.topnav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0px; 
+    left: 0px;
+    padding: 5px;
+    z-index: 99;
+    width: 99.3%;
+    clear: both;
+    background-color: #DBD8AE;
+    overflow: hidden;
+}
+
+.topnav #logo {
+    display: block;
+
+}
+
+.topnav #logo h1 {
+    font-family: "Palatino Linotype";
+    font-size: 2.5em;
+    margin: 7px;
+    float: left;
+    color: #994636;
+}
+
+#logo-img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #CB904D;
+    text-align: center;
+    padding: 25px 30px;
+    margin-top: 0px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #DFCC74;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-screen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #CB904D;
+}
+
+.camera-input {
+    margin-top: 80px;
+    width: 95%;
+    height: 75%;
+    background-color: #EAF4D3;
+    border-radius: 10px;
+}
+
+.hat-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 17%;
+    margin: 10px;
+    background-color: #994636;
+    border-radius: 10px;
+}
+
+.hat-items {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.hat-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.6;
+    background: white;
+}
+
+.hat-item:first-child {
+    opacity: 1;
+}
+
+.hat-image {
+    width: 90px;
+    height: 80px;
+}
+
+.start-arrow {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 50px;   
+    margin-left: 20px;
+}
+
+#left-arrow {
+    margin-left: 7px;
+    width: 50px;
+    height: 30px;
+}
+
+.end-arrow {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    width: 60px;
+    height: 50px;
+}
+
+#right-arrow {
+    margin-left: 5px;
+    width: 50px;
+    height: 30px;
+    transform: scaleX(-1);
+}
+
+.end-arrow:hover,.start-arrow:hover {
+    background-color: #DFCC74;
+    border-radius: 5px;
+}

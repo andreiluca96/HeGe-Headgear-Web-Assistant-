@@ -18,57 +18,37 @@
 
 	    <div class="main-screen">
 	    	<div class="camera-input">
-	    		<video id="v" width="300" height="300"></video>
-				<input id="b" type="button" disabled="true" value="Take Picture"></input>
-				<canvas id="c" style="display:none;" width="300" height="300"></canvas>
+	    	</div>
+	    	<div class="hat-selector">
+	    		<div class="start-arrow">
+	    			<img id="left-arrow" src="https://cdn.pixabay.com/photo/2014/03/25/16/59/left-297787_1280.png"/> 
+	    		</div>
+	    		<div class="hat-items">
+<!-- 		    		<div class="hat-item">
+		    			<img class="hat-image" width="60px" height="50px" src="../img/8.png">
+		    		</div>
+		    		<div class="hat-item">
+		    			<img class="hat-image" width="60px" height="50px" src="../img/7.png">
+		    		</div>
+		    		<div class="hat-item">
+		    			<img class="hat-image" width="60px" height="50px" src="../img/6.png">
+		    		</div>
+		    		<div class="hat-item">
+		    			<img class="hat-image" width="60px" height="50px" src="../img/5.png">
+
+		    		</div> -->
+	    		</div>
+	    		<div class="end-arrow">
+	    			<img id="right-arrow" src="https://cdn.pixabay.com/photo/2014/03/25/16/59/left-297787_1280.png"/> 
+	    		</div>
 	    	</div>
 	    </div>
 
 	</div>
 
 	<script type="text/javascript">
-		// (function() {
-		//     'use strict';
-		//     var video = document.querySelector('video')
-		//       , canvas;
-
-		//     /**
-		//      *  generates a still frame image from the stream in the <video>
-		//      *  appends the image to the <body>
-		//      */
-		//     function takeSnapshot() {
-		//       var img = document.querySelector('img') || document.createElement('img');
-		//       var context;
-		//       var width = video.offsetWidth
-		//         , height = video.offsetHeight;
-
-		//       canvas = canvas || document.createElement('canvas');
-		//       canvas.width = width;
-		//       canvas.height = height;
-
-		//       context = canvas.getContext('2d');
-		//       context.drawImage(video, 0, 0, width, height);
-
-		//       img.src = canvas.toDataURL('image/png');
-		//       document.body.appendChild(img);
-		//     }
-
-		//     // use MediaDevices API
-		//     // docs: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-		//     if (navigator.mediaDevices) {
-		//       // access the web cam
-		//       navigator.mediaDevices.getUserMedia({video: true})
-		//       // permission granted:
-		//         .then(function(stream) {
-		//           video.src = window.URL.createObjectURL(stream);
-		//           video.addEventListener('click', takeSnapshot);
-		//         })
-		//         // permission denied:
-		//         .catch(function(error) {
-		//           document.body.textContent = 'Could not access the camera. Error: ' + error.name;
-		//         });
-		//     }
-		  })();
+		var height = screen.height;
+		var width = screen.width;
 	</script>
 
 
