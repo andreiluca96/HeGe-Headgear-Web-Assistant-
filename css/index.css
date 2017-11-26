@@ -41,6 +41,10 @@
 	padding: 4px;
 
 }
+.radio-container {
+	display: flex;
+	justify-content: center;
+}
 
 .button-container{
  	display: flex;
