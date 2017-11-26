@@ -24,18 +24,8 @@
 	    			<img id="left-arrow" src="https://cdn.pixabay.com/photo/2014/03/25/16/59/left-297787_1280.png"/> 
 	    		</div>
 	    		<div class="hat-items">
-<!-- 		    		<div class="hat-item">
+<!-- 		    	<div class="hat-item">
 		    			<img class="hat-image" width="60px" height="50px" src="../img/8.png">
-		    		</div>
-		    		<div class="hat-item">
-		    			<img class="hat-image" width="60px" height="50px" src="../img/7.png">
-		    		</div>
-		    		<div class="hat-item">
-		    			<img class="hat-image" width="60px" height="50px" src="../img/6.png">
-		    		</div>
-		    		<div class="hat-item">
-		    			<img class="hat-image" width="60px" height="50px" src="../img/5.png">
-
 		    		</div> -->
 	    		</div>
 	    		<div class="end-arrow">
@@ -47,8 +37,42 @@
 	</div>
 
 	<script type="text/javascript">
-		var height = screen.height;
-		var width = screen.width;
+		fetchHatsFunction = function fetchHats() {
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+
+			numberOfHatsToShow = Math.round((width - 100) / 200);
+
+			if (numberOfHatsToShow % 2 == 0) {
+				numberOfHatsToShow--;
+			}
+
+			hatItems = document.getElementsByClassName('hat-items')[0]
+
+			hatItems.innerHTML = '';
+
+			for (var i = 0; i < numberOfHatsToShow; i++) {
+				var hatItemDiv = document.createElement('div');
+				hatItemDiv.className = "hat-item";
+
+				if (i == Math.round(numberOfHatsToShow / 2) - 1) {
+					hatItemDiv.className += " hat-item-active";
+				}
+
+				var hatImage = document.createElement("img");
+				hatImage.className = "hat-image";
+				hatImage.setAttribute('src', "../img/".concat(i + 1).concat(".png"));
+
+				hatItemDiv.appendChild(hatImage);
+
+				hatItems.appendChild(hatItemDiv);
+			}
+		}
+
+		fetchHatsFunction()
+
+		window.onresize = fetchHatsFunction
+
 	</script>
 
 

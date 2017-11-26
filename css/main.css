@@ -120,7 +120,7 @@ body {
     background: white;
 }
 
-.hat-item:first-child {
+.hat-item-active {
     opacity: 1;
 }
 
