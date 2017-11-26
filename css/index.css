@@ -10,7 +10,7 @@
 
 .form-container h3{
 	font-family: "Palatino Linotype";
-	color: #8F94FA
+	color: #3A405A
 }
 
 .title-field-container {
@@ -33,7 +33,7 @@
 .label-container label{
 	font-family: "Palatino Linotype";
 	font-size: 17px;
-	color: #8F94FA;
+	color: #3A405A;
 	padding-bottom: inherit;
 }
 
@@ -80,10 +80,12 @@
 }
 
 ul li{
-  color: #AAAAAA;
-  display: block;
-  position: relative;
-  float: left;
+	color: #AAAAAA;
+	display: block;
+	position: relative;
+	float: left;
+  	font-family: "Palatino Linotype";
+	font-size: 15px;
 }
 
 ul > :first-child{
