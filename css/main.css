@@ -124,6 +124,10 @@ body {
     opacity: 1;
 }
 
+.hat-item-hidden {
+    visibility: hidden;
+}
+
 .hat-image {
     width: 90px;
     height: 80px;

@@ -20,7 +20,7 @@
 	    	<div class="camera-input">
 	    	</div>
 	    	<div class="hat-selector">
-	    		<div class="start-arrow">
+	    		<div class="start-arrow" onclick="moveLeft()">
 	    			<img id="left-arrow" src="https://cdn.pixabay.com/photo/2014/03/25/16/59/left-297787_1280.png"/> 
 	    		</div>
 	    		<div class="hat-items">
@@ -28,16 +28,18 @@
 		    			<img class="hat-image" width="60px" height="50px" src="../img/8.png">
 		    		</div> -->
 	    		</div>
-	    		<div class="end-arrow">
+	    		<div class="end-arrow" onclick="moveRight()">
 	    			<img id="right-arrow" src="https://cdn.pixabay.com/photo/2014/03/25/16/59/left-297787_1280.png"/> 
 	    		</div>
 	    	</div>
 	    </div>
-
 	</div>
-
 	<script type="text/javascript">
-		fetchHatsFunction = function fetchHats() {
+		var lowerBound = 0;
+		var upperBound = 8;
+		var currentActiveHatIndex = -1;
+
+		fetchHatsFunction = function() {
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 
@@ -45,6 +47,10 @@
 
 			if (numberOfHatsToShow % 2 == 0) {
 				numberOfHatsToShow--;
+			}
+
+			if (currentActiveHatIndex == -1) {
+				currentActiveHatIndex = Math.round(upperBound / 2) - 1;
 			}
 
 			hatItems = document.getElementsByClassName('hat-items')[0]
@@ -61,7 +67,16 @@
 
 				var hatImage = document.createElement("img");
 				hatImage.className = "hat-image";
-				hatImage.setAttribute('src', "../img/".concat(i + 1).concat(".png"));
+
+				if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 <= lowerBound) {
+					hatItemDiv.className += " hat-item-hidden";
+				}
+
+				if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 > upperBound) {
+					hatItemDiv.className += " hat-item-hidden";
+				}
+
+				hatImage.setAttribute('src', "../img/".concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
 
 				hatItemDiv.appendChild(hatImage);
 
@@ -69,7 +84,22 @@
 			}
 		}
 
+		moveLeft = function() {
+			if (currentActiveHatIndex - 1 >= lowerBound) {
+				currentActiveHatIndex --;
+				fetchHatsFunction()
+			}
+		}
+
+		moveRight = function() {
+			if (currentActiveHatIndex + 2 <= upperBound) {
+				currentActiveHatIndex ++;
+				fetchHatsFunction()				
+			}
+		}
+
 		fetchHatsFunction()
+
 
 		window.onresize = fetchHatsFunction
 
