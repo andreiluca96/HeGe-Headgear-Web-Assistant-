@@ -39,7 +39,7 @@
 		var upperBound = 8;
 		var currentActiveHatIndex = -1;
 
-		fetchHatsFunction = function() {
+		fetchHatsFunction = function(move) {
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 
@@ -65,18 +65,25 @@
 					hatItemDiv.className += " hat-item-active";
 				}
 
+				if (move == -1) {
+					hatItemDiv.className += " hat-item-left-animation";
+				}
+				if (move == 1) {
+					hatItemDiv.className += " hat-item-right-animation";
+				}
+
 				var hatImage = document.createElement("img");
 				hatImage.className = "hat-image";
 
 				if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 <= lowerBound) {
 					hatItemDiv.className += " hat-item-hidden";
+				} else {
+					if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 > upperBound) {
+						hatItemDiv.className += " hat-item-hidden";
+					} else {
+						hatImage.setAttribute('src', "../img/".concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
+					}
 				}
-
-				if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 > upperBound) {
-					hatItemDiv.className += " hat-item-hidden";
-				}
-
-				hatImage.setAttribute('src', "../img/".concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
 
 				hatItemDiv.appendChild(hatImage);
 
@@ -85,20 +92,36 @@
 		}
 
 		moveLeft = function() {
+			startArrow = document.getElementsByClassName('start-arrow')[0];
+			startArrow.className = 'start-arrow';
+			startArrow.className += ' start-arrow-active';
+
 			if (currentActiveHatIndex - 1 >= lowerBound) {
 				currentActiveHatIndex --;
-				fetchHatsFunction()
+				fetchHatsFunction(-1)
 			}
 		}
 
 		moveRight = function() {
+			endArrow = document.getElementsByClassName('end-arrow')[0];
+			endArrow.className = 'end-arrow';
+			endArrow.className += ' end-arrow-active';
 			if (currentActiveHatIndex + 2 <= upperBound) {
 				currentActiveHatIndex ++;
-				fetchHatsFunction()				
+				fetchHatsFunction(1)				
 			}
 		}
 
-		fetchHatsFunction()
+		document.addEventListener('keydown', function(event) {
+		    if(event.keyCode == 37) {
+		        moveLeft();
+		    }
+		    else if(event.keyCode == 39) {
+		        moveRight();
+		    }
+		});
+
+		fetchHatsFunction(0)
 
 
 		window.onresize = fetchHatsFunction
