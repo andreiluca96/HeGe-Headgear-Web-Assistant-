@@ -82,6 +82,7 @@
 						hatItemDiv.className += " hat-item-hidden";
 					} else {
 						hatImage.setAttribute('src', "../img/".concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
+						hatItemDiv.setAttribute('onClick', 'changeCurrentHatItem(this)');
 					}
 				}
 
@@ -112,6 +113,25 @@
 			}
 		}
 
+		changeCurrentHatItem = function(element) {
+			imgElement = element.childNodes[0];
+			startingFileNameIndex = imgElement.getAttribute('src').lastIndexOf('/');
+			extensionFileNameIndex = imgElement.getAttribute('src').lastIndexOf('.');
+
+			move = 0;
+
+			if (currentActiveHatIndex < imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
+				move = 1;
+			}
+			if (currentActiveHatIndex > imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
+				move = -1;
+			}
+
+			currentActiveHatIndex = imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7);
+			currentActiveHatIndex--;
+			fetchHatsFunction(move);
+		}
+
 		document.addEventListener('keydown', function(event) {
 		    if(event.keyCode == 37) {
 		        moveLeft();
@@ -121,10 +141,10 @@
 		    }
 		});
 
-		fetchHatsFunction(0)
+		fetchHatsFunction(0);
 
 
-		window.onresize = fetchHatsFunction
+		window.onresize = fetchHatsFunction;
 
 	</script>
 
