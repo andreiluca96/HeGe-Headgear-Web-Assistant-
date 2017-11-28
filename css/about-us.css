@@ -19,6 +19,13 @@ body {
 	}
 }
 
+h1 {
+	font-size: 2.5em;
+    margin: 7px;
+    text-align: center;
+    font-family: "Palatino Linotype";
+    color: #F6F6FF;
+}
 .avatars-container, .avatar-container{
 	display: flex;
 	justify-content: center;
@@ -36,11 +43,17 @@ body {
 	opacity: 1;
 }
 
-.avatar{
+.avatar-1 {
+	padding-left: 60px;
+}
+.avatar-2 {
+	padding-left: 35px;
+}
+.avatar-1, .avatar-2 {
 	height: 180px;
     width: 180px;
 }
-h1 {
+.avatar-container h1 {
 	font-family: "Palatino Linotype";
     color: #19be97;
 }
