@@ -316,8 +316,6 @@ html {
     width: 60px;
     height: 50px;   
     animation: infinitySwing 5s infinite;
-    border-radius: 26px;
-    border: 3px solid #19be97;
 }
 
 .start-arrow-active {
@@ -325,11 +323,10 @@ html {
 }
 
 #left-arrow {
-    margin-left: 7px;
+    transform: scaleX(-1);
     width: 50px;
     height: 30px;
 }
-
 .end-arrow {
     margin-right: 20px;
 }
@@ -342,11 +339,8 @@ html {
     margin-left: 5px;
     width: 50px;
     height: 30px;
-    transform: scaleX(-1);
 }
 
 .end-arrow:hover,.start-arrow:hover {
-  background-color: #19be97;
-    border-radius: 26px;
     animation: swing 0.25s;
 }
