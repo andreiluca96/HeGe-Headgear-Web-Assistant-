@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> HeGe - draw a headgear </title>
+	<link rel="icon" type="image/gif/png" href="../img/hat.png">
+	<title> HeGe (Headgear Web Assistant) </title>
+	<link rel="stylesheet" type="text/css" href="../css/draw-hat.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+	<div class="wrapper">
+		 <div class="topnav" id="myTopnav">
+	        <div id="logo">
+	            <img class="logo-img" src="../img/hat.png"/>
+	            <h1> HeGe (Headgear Web Assistant) </h1>
+	            <img class="logo-img" src="../img/hat.png"/>
+	        </div>
+	    </div>
+
+	    <div class="main-screen">
+			<div id="sketch">
+			    <canvas id="paint"></canvas>
+			</div>
+	    </div>
+	</div>
+
+	<script type="text/javascript">
+    (function() {
+    var canvas = document.querySelector('#paint');
+    var ctx = canvas.getContext('2d');
+
+    var sketch = document.querySelector('#sketch');
+    var sketch_style = getComputedStyle(sketch);
+    canvas.width = parseInt(sketch_style.getPropertyValue('width'));
+    canvas.height = parseInt(sketch_style.getPropertyValue('height'));
+
+    var mouse = {x: 0, y: 0};
+    var last_mouse = {x: 0, y: 0};
+
+    /* Mouse Capturing Work */
+    canvas.addEventListener('mousemove', function(e) {
+        last_mouse.x = mouse.x;
+        last_mouse.y = mouse.y;
+
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+    }, false);
+
+
+    /* Drawing on Paint App */
+    ctx.lineWidth = 5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'blue';
+
+    canvas.addEventListener('mousedown', function(e) {
+        canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', function() {
+        canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
+
+    var onPaint = function() {
+        ctx.beginPath();
+        ctx.moveTo(last_mouse.x, last_mouse.y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.closePath();
+        ctx.stroke();
+    };
+
+}());
+    </script>
+        
+
+
+</body>
+</html>
