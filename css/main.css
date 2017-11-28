@@ -250,9 +250,10 @@ html {
     width: 95%;
     height: 14%;
     margin: 10px;
-    background-color: #f0e914;
+    background-color: #ffffff;
     border-radius: 10px;
     opacity: 0.98;
+    border: 7px solid #19be97;
     box-shadow: 7px 7px 8px #373E40;
 }
 
@@ -269,12 +270,12 @@ html {
     margin: 5px 10px;
     border-radius: 10px;
     width: 100px;
-    height: 100px;
     opacity: 0.6;
-    background: #F6F6FF;
-    box-shadow: 5px 5px 3px #888888;
+    background: #ffffff;
     animation-name: swing;
     animation-duration: 0.25s;
+    border-radius: 26px;
+    border: 3px solid #19be97;
 }
 
 
@@ -307,12 +308,16 @@ html {
 }
 
 .start-arrow {
+    margin-left: 20px;
+}
+.start-arrow, .end-arrow {
     display: flex;
     align-items: center;
     width: 60px;
     height: 50px;   
-    margin-left: 20px;
     animation: infinitySwing 5s infinite;
+    border-radius: 26px;
+    border: 3px solid #19be97;
 }
 
 .start-arrow-active {
@@ -326,12 +331,7 @@ html {
 }
 
 .end-arrow {
-    display: flex;
-    align-items: center;
     margin-right: 20px;
-    width: 60px;
-    height: 50px;
-    animation: infinitySwing 7s infinite;
 }
 
 .end-arrow-active {
@@ -346,6 +346,7 @@ html {
 }
 
 .end-arrow:hover,.start-arrow:hover {
-    border-radius: 5px;
+  background-color: #19be97;
+    border-radius: 26px;
     animation: swing 0.25s;
 }
