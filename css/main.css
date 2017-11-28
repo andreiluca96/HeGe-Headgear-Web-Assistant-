@@ -250,10 +250,10 @@ html {
     width: 95%;
     height: 14%;
     margin: 10px;
-    background-color: #F6F6FF;
+    background-color: #f0e914;
     border-radius: 10px;
     opacity: 0.98;
-    box-shadow: 7px 7px 8px #888888;
+    box-shadow: 7px 7px 8px #373E40;
 }
 
 .hat-items {
@@ -346,8 +346,6 @@ html {
 }
 
 .end-arrow:hover,.start-arrow:hover {
-    background-color: #D2D4C8;
     border-radius: 5px;
-    box-shadow: 5px 5px 3px #888888;
     animation: swing 0.25s;
 }
