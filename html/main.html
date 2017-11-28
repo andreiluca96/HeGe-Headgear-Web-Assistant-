@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="icon" type="image/gif/png" href="https://cdn.pixabay.com/photo/2017/10/12/09/47/hat-2844056_1280.png">
+	<link rel="icon" type="image/gif/png" href="../img/hat.png">
 	<title> HeGe (Headgear Web Assistant) </title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
@@ -10,14 +10,15 @@
 	<div class="wrapper">
 		 <div class="topnav" id="myTopnav">
 	        <div id="logo">
-	            <img id="logo-img" src="https://cdn.pixabay.com/photo/2017/10/12/09/47/hat-2844056_1280.png"/> 
+	            <img class="logo-img" src="../img/hat.png"/>
 	            <h1> HeGe (Headgear Web Assistant) </h1>
-	            <img id="logo-img" src="https://cdn.pixabay.com/photo/2017/10/12/09/47/hat-2844056_1280.png"/> 
+	            <img class="logo-img" src="../img/hat.png"/>
 	        </div>
 	    </div>
 
 	    <div class="main-screen">
 	    	<div class="camera-input">
+	    		<video autoplay></video>
 	    	</div>
 	    	<div class="hat-selector">
 	    		<div class="start-arrow" onclick="moveLeft()">
@@ -43,7 +44,7 @@
 			var width = window.innerWidth;
 			var height = window.innerHeight;
 
-			numberOfHatsToShow = Math.round((width - 100) / 200);
+			numberOfHatsToShow = Math.round((width - 100) / 150);
 
 			if (numberOfHatsToShow % 2 == 0) {
 				numberOfHatsToShow--;
@@ -120,7 +121,7 @@
 
 			move = 0;
 
-			if (currentActiveHatIndex < imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
+			if (currentActiveHatIndex <= imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
 				move = 1;
 			}
 			if (currentActiveHatIndex > imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
@@ -146,6 +147,24 @@
 
 		window.onresize = fetchHatsFunction;
 
+	</script>
+
+	<script>
+	  var errorCallback = function(e) {
+	    console.log('Reeeejected!', e);
+	  };
+
+	  // Not showing vendor prefixes.
+	  navigator.getUserMedia({video: true}, function(localMediaStream) {
+	    var video = document.querySelector('video');
+	    video.src = window.URL.createObjectURL(localMediaStream);
+
+	    // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+	    // See crbug.com/110938.
+	    video.onloadedmetadata = function(e) {
+	      // Ready to go. Do some stuff.
+	    };
+	  }, errorCallback);
 	</script>
 
 
