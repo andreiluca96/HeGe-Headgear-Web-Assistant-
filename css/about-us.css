@@ -1,0 +1,46 @@
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #a23716, #7f6a72, #295c6e, #23D5AB);
+	background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.avatars-container, .avatar-container{
+	display: flex;
+	justify-content: center;
+}
+
+.avatar-container {
+	flex-direction: column;
+	margin: 100px;
+	opacity: 0.8;
+	margin-top: 150px;
+
+}
+
+.avatar-container:hover {
+	opacity: 1;
+}
+
+.avatar{
+	height: 180px;
+    width: 180px;
+}
+h1 {
+	font-family: "Palatino Linotype";
+    color: #19be97;
+}
