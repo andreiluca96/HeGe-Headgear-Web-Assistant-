@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Documentatie - HeGe (Headgear Web Assistant)</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script src="prism.js" defer=""></script>
+</head>
+<body prefix="schema: http://schema.org/">
+    <header>
+      <p class="title">Headgear Web Assistant</p>
+      <p class="subtitle">Documentation</p>
+    </header>
+	<article typeof="schema:ScholarlyArticle" resource="#">
+		<h1> Headgear Web Assistant </h1>
+		<section>
+			<ol>
+				<li property="schema:author">
+					<a property="schema:author" href="https://github.com/andreiluca96" typeof="schema:Person">
+						<span property="schema:givenName">
+							Andrei
+						</span>
+						<span property="schema:familyName">
+							Luca
+						</span>						
+					</a>					
+				</li>
+				<li property="schema:author">
+					<a property="schema:author" href="https://github.com/OpariucAriana" typeof="schema:Person">
+						<span property="schema:givenName">
+							Ariana
+						</span>
+						<span property="schema:familyName">
+							Opariuc
+						</span>						
+					</a>					
+				</li>
+			</ol>
+		</section>
+		<section typeof="sa:Subcategorii" id="cuprins">
+        <h2>Cuprins</h2>
+        <aside typeof="schema:WPSideBar">
+          <p>
+            <ul>
+				<li><a href="#introducere">1. Introducere</a></li>
+				<li><a href="#schiteprototip">2. Schite, prototip</a></li>
+				<li><a href="#interactiuneacuutilizatorul">3. Interactiunea cu utilizatorul </a></li>
+				<li><a href="#apiexterne">4. Utilizarea API-urilor externe </a></li>
+				<li><a href="#progresProiect">5. Management cod sursa</a></li>
+			</ul>
+          <!--</p>-->
+        </aside>
+      </section>
+      <section typeof="sa:Results" id="introducere">
+        <h2>1. Introducere</h2>
+        <p>
+Un magazin (online) de accesorii de îmbrăcăminte pentru acoperit creştetul capului (bonete, căciuli, fesuri, pălării, şepci, turbane,...) intenţionează să atragă mai mulţi clienţi oferind o aplicaţie Web responsivă menită a oferi asistenţă utilizatorilor în ceea ce priveşte probarea virtuală a acestor accesorii fără a necesita prezenţa fizică. Interacţiunea Web se va baza pe realitatea îmbogăţită (AR – Augmented Reality). Suplimentar, se va pune la dispoziţie un asistent Web oferind sugestii referitoare la (tipuri de) articole vestimentare în funcţie de sezon, moda curentă ori preferinţe specifice (e.g., Tuxy adoră să poarte joben de mătase doar când nu are plete), eventual pe baza cercului de "prieteni" dintr-o reţea socială. A se parcurge şi List of headgear, plus Awesome AR.
+        </p>
+    </section>
+    <section id="etapeProiect">
+        <h2>2. Schite, prototip </h2>
+		<figure typeof="sa:Image6">
+			<img src="images/schita.jpg" style="width:800px;height:400px;display:inline;border: 2px solid black">
+			<figcaption align="center">
+				Workflow-ul aplicatiei HeGe.
+			</figcaption>
+		</figure>
+    </section>
+    <section id="arhitectura">
+		<h2>3. Interactiunea cu utilizatorul</h2>
+		
+		<blockquote>	 
+		<p>Interactiunea cu utilizatorul se va baza pe camera acestuia si de asemenea prin interfata web. Astfel, prin realitatea augumentata la care va recurge modul de prezentare a datelor, va stimula imaginatia si de asemenea va oferi utilizatorilor o experienta cat mai aproape de realitate.</p>
+		</blockquote>
+	</section>		
+    <section id="progresProiect">
+      	<h2>4. Utilizarea API-urilor externe</h2>
+        <blockquote>
+	  		<h3> Stocarea modelelor(a palariilor) </h3> 
+			<p> Pentru a stoca modelele palariilor ce vor fi utilizate mai tarziu pentru a le prezenta utilizatorilor, avem nevoie de o modalitate simpla de a stoca aceste fisiere binare. Astfel, o metoda conventionala de baze de date ar face complicata stocarea, deoarece imaginile ar trebui sa sufere o serie de transformari pentru a fi stocate. In acest sens, pentru stocare vom folosi una din cele mai populare metode la momentul actual si anume <a href="https://aws.amazon.com/documentation/s3/"> Amazon S3 </a>. </p>
+		</blockquote>
+
+        <blockquote>
+	  		<h3> Realizarea randarilor bazate pe realitatea augumentata </h3> 
+			<p> Pentru a oferi utilizatorilor senzatia de realitate augumentata vom folosi o serie de framework-uri open-source - <a href="https://github.com/argonjs/argon">Argon JS</a>.</p>
+		</blockquote>
+		
+        <blockquote>
+	  		<h3> Realizarea unui model de predictii </h3> 
+			<p> Pentru a oferi sugestii utilizatorilor de palarii vom recurge la modele bazate pe clasificare bayesiana. Vom incerca sa etichetam manual fiecare palarie cu o serie de feature-uri, iar apoi utilizand un <a href="https://github.com/ttezel/bayes">API</a> pentru clasificare bayesiana, vom realiza predictiile. </p>
+		</blockquote>
+	</section>
+
+	<section id="tehnologiieUtilizate">
+    	<h2>5. Managment cod sursa </h2>
+    	<blockquote>
+    		<h3> Git - GitHub </h3>
+    		<p>
+    			Git este un sistem revision control care rulează pe majoritatea platformelor, inclusiv Linux, POSIX, Windows și OS X. Ca și Mercurial, Git este un sistem distribuit și nu întreține o bază de date comună. Este folosit în echipe de dezvoltare mari, în care membrii echipei acționează oarecum independent și sunt răspândiți pe o arie geografică mare.
+    		</p>
+    	</blockquote>
+    	
+	</section>
+</body>
+</html>
