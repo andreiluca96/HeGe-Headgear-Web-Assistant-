@@ -2,7 +2,7 @@
 	    display: flex;
     justify-content: center;
 }
-.paint-tools, .pencil, .photo-camera{
+.paint-tools, .photo-camera{
     width: 30px;;
     height: 60px;
     opacity: 0.8;
