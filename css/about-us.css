@@ -26,6 +26,27 @@ h1 {
     font-family: "Palatino Linotype";
     color: #F6F6FF;
 }
+.topnav {
+	    display: flex;
+    justify-content: center;
+}
+.paint-tools, .pencil, .photo-camera{
+    width: 30px;;
+    height: 60px;
+    opacity: 0.8;
+}
+.photo-camera {
+	    padding-left: 30px;
+    padding-right: 30px;
+}
+img:hover {
+	opacity: 1;
+}
+.side-bar{
+    display: flex;
+    position: absolute;
+    padding-left: 1228px;
+}
 .avatars-container, .avatar-container{
 	display: flex;
 	justify-content: center;

@@ -1,3 +1,32 @@
+.topnav {
+	    display: flex;
+    justify-content: center;
+}
+.paint-tools, .pencil, .photo-camera{
+    width: 30px;;
+    height: 60px;
+    opacity: 0.8;
+}
+.avatar-1:hover{
+  opacity: 1;
+}
+.avatar-1:hover + img {
+  opacity: 1;
+}
+.about-us{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+img:hover {
+	opacity: 1;
+}
+
+.side-bar{
+    display: flex;
+    position: absolute;
+    padding-left: 1228px;
+}
+
 #sketch {
 	width: 80%;
 	height: 70%;
