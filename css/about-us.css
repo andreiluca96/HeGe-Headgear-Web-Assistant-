@@ -35,10 +35,12 @@ h1 {
     height: 60px;
     opacity: 0.8;
 }
+
 .photo-camera {
 	    padding-left: 30px;
     padding-right: 30px;
 }
+
 img:hover {
 	opacity: 1;
 }
@@ -60,8 +62,7 @@ img:hover {
 	flex-wrap: wrap;
 
 }
-
-.avatar-container:hover .avatar-1::after{
+.avatar-container:hover {
 	opacity: 1;
 }
 
