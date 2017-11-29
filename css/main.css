@@ -159,6 +159,32 @@ html {
     color: #F6F6FF;
 }
 
+img{
+    width: 30px;;
+    height: 60px;
+    opacity: 0.8;
+}
+
+.paint-tools:hover, .pencil:hover{
+  opacity: 1;
+}
+
+
+.side-bar{
+    display: flex;
+    position: absolute;
+    padding-left: 1228px;
+}
+.avatar-1:hover{
+  opacity: 1;
+}
+.avatar-1:hover + img {
+  opacity: 1;
+}
+.about-us{
+    padding-left: 30px;
+    padding-right: 30px;
+}
 .logo-img {
     float: left;
     width: 60px;

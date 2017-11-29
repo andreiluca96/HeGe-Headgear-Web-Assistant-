@@ -39,7 +39,7 @@ h1 {
 
 }
 
-.avatar-container:hover {
+.avatar-container:hover .avatar-1::after{
 	opacity: 1;
 }
 
