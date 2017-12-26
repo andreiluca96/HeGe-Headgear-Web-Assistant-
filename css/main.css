@@ -1,10 +1,14 @@
 body {
-  width: 100wh;
-  height: 90vh;
+  width: 100%;
+  height: 90%;
   color: #fff;
   background: linear-gradient(-45deg, #a23716, #7f6a72, #295c6e, #23D5AB);
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
+}
+
+video, canvas {
+    position: absolute;
 }
 
 @keyframes Gradient {

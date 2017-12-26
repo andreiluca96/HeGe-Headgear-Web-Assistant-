@@ -4,6 +4,9 @@
 	<link rel="icon" type="image/gif/svg" href="../img/winter-hat.svg">
 	<title> HeGe (Headgear Web Assistant) </title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="../tracking.js-master/build/tracking-min.js"></script>
+    <script src="../tracking.js-master/build/data/face-min.js"></script>
+    <script src="../tracking.js-master/build/data/eye-min.js"></script>
 </head>
 <body>
 
@@ -26,7 +29,8 @@
 
 	    <div class="main-screen">
 	    	<div class="camera-input">
-	    		<video autoplay></video>
+                <video id="video" width="320" height="240" preload autoplay loop muted></video>
+                <canvas id="canvas" width="320" height="240"></canvas>
 	    	</div>
 	    	<div class="hat-selector">
 	    		<div class="start-arrow" onclick="moveLeft()">
@@ -62,7 +66,7 @@
 				currentActiveHatIndex = Math.round(upperBound / 2) - 1;
 			}
 
-			hatItems = document.getElementsByClassName('hat-items')[0]
+			hatItems = document.getElementsByClassName('hat-items')[0];
 
 			hatItems.innerHTML = '';
 
@@ -99,18 +103,18 @@
 
 				hatItems.appendChild(hatItemDiv);
 			}
-		}
+		};
 
 		moveLeft = function() {
-			startArrow = document.getElementsByClassName('start-arrow')[0];
-			startArrow.className = 'start-arrow';
-			startArrow.className += ' start-arrow-active';
+            startArrow = document.getElementsByClassName('start-arrow')[0];
+            startArrow.className = 'start-arrow';
+            startArrow.className += ' start-arrow-active';
 
-			if (currentActiveHatIndex - 1 >= lowerBound) {
-				currentActiveHatIndex --;
-				fetchHatsFunction(-1)
-			}
-		}
+            if (currentActiveHatIndex - 1 >= lowerBound) {
+                currentActiveHatIndex--;
+                fetchHatsFunction(-1)
+            }
+        };
 
 		moveRight = function() {
 			endArrow = document.getElementsByClassName('end-arrow')[0];
@@ -120,7 +124,7 @@
 				currentActiveHatIndex ++;
 				fetchHatsFunction(1)				
 			}
-		}
+		};
 
 		changeCurrentHatItem = function(element) {
 			imgElement = element.childNodes[0];
@@ -139,7 +143,7 @@
 			currentActiveHatIndex = imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7);
 			currentActiveHatIndex--;
 			fetchHatsFunction(move);
-		}
+		};
 
 		document.addEventListener('keydown', function(event) {
 		    if(event.keyCode == 37) {
@@ -175,6 +179,27 @@
 	  }, errorCallback);
 	</script>
 
+	<script>
+		window.onload = function() {
+			var video = document.getElementById('video');
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+			var tracker = new tracking.ObjectTracker(['face', 'eye']);
+			tracker.setInitialScale(4);
+			tracker.setStepSize(2);
+			tracker.setEdgesDensity(0.1);
+			tracking.track('#video', tracker, { camera: true });
+			tracker.on('track', function(event) {
+				event.data.forEach(function(rect) {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.strokeStyle = '#a64ceb';
+                    var currentHatDiv = document.getElementsByClassName('hat-item-active')[0];
+                    var currentHatImg = currentHatDiv.childNodes[0];
 
+                    context.drawImage(currentHatImg, rect.x, rect.y - rect.height / 1.5, rect.width, rect.height)
+				});
+			});
+		};
+	</script>
 </body>
 </html>
