@@ -4,9 +4,9 @@
 	<link rel="icon" type="image/gif/svg" href="../img/winter-hat.svg">
 	<title> HeGe (Headgear Web Assistant) </title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
-    <script src="../tracking.js-master/build/tracking-min.js"></script>
-    <script src="../tracking.js-master/build/data/face-min.js"></script>
-    <script src="../tracking.js-master/build/data/eye-min.js"></script>
+	<script src="../clmtrackr-gh-pages/build/clmtrackr.js"></script>
+	<script src="../clmtrackr-gh-pages/examples/js/libs/utils.js"></script>
+	<script src="../clmtrackr-gh-pages/examples/js/libs/Stats.js"></script>
 </head>
 <body>
 
@@ -25,12 +25,14 @@
 	            	</div>
 	           		<img class="pencil" src="../img/edit.svg">
 	            </div>
-	    </div>
+			 <button id="startbutton">Start</button>
+
+		 </div>
 
 	    <div class="main-screen">
 	    	<div class="camera-input">
-                <video id="video" width="320" height="240" preload autoplay loop muted></video>
-                <canvas id="canvas" width="320" height="240"></canvas>
+                <video id="inputVideo" width="320" height="240" preload autoplay loop muted></video>
+                <canvas id="overlay" width="320" height="240"></canvas>
 	    	</div>
 	    	<div class="hat-selector">
 	    		<div class="start-arrow" onclick="moveLeft()">
@@ -179,27 +181,6 @@
 	  }, errorCallback);
 	</script>
 
-	<script>
-		window.onload = function() {
-			var video = document.getElementById('video');
-			var canvas = document.getElementById('canvas');
-			var context = canvas.getContext('2d');
-			var tracker = new tracking.ObjectTracker(['face', 'eye']);
-			tracker.setInitialScale(4);
-			tracker.setStepSize(2);
-			tracker.setEdgesDensity(0.1);
-			tracking.track('#video', tracker, { camera: true });
-			tracker.on('track', function(event) {
-				event.data.forEach(function(rect) {
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-                    context.strokeStyle = '#a64ceb';
-                    var currentHatDiv = document.getElementsByClassName('hat-item-active')[0];
-                    var currentHatImg = currentHatDiv.childNodes[0];
-
-                    context.drawImage(currentHatImg, rect.x, rect.y - rect.height / 1.5, rect.width, rect.height)
-				});
-			});
-		};
-	</script>
+	<script src="../javascript/hat_placement.js"></script>
 </body>
 </html>
