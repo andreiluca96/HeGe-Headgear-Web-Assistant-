@@ -12,9 +12,9 @@ function drawLoop() {
     requestAnimFrame(drawLoop);
     cc.clearRect(0, 0, 320, 240);
     if (ctracker.getCurrentPosition()) {
-        ctracker.draw(overlay);
         var positions = ctracker.getCurrentPosition();
-        console.log(positions);
+        cc.drawImage(videoInput, 0, 0, 320, 240);
+        ctracker.draw(overlay);
         cc.drawImage(currentHatImg, positions[14][0] - (positions[0][0] - positions[14][0])*0.3, positions[0][1], (positions[0][0] - positions[14][0]) * 1.4, (positions[0][1] - positions[7][1]) * 1.3);
     }
 }
@@ -25,3 +25,11 @@ function positionLoop() {
 
 }
 positionLoop();
+
+function takePhoto() {
+    console.log('take photo pressed');
+    var dataURI = canvasInput.toDataURL('image/jpeg');
+    var w=window.open('about:blank','image from canvas');
+    w.document.write("<img src='"+dataURI+"' alt='from canvas'/>");
+    window.open(c.toDataURL('image/png'));
+}

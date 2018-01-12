@@ -346,3 +346,8 @@ img{
 .end-arrow:hover,.start-arrow:hover {
     animation: swing 0.25s;
 }
+#take-photo {
+    align-self: flex-end;
+    padding: 10px;
+    margin-bottom: 100px;
+}
