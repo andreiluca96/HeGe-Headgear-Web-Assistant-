@@ -1,3 +1,17 @@
+.topnav {
+	position: unset !important;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.main-screen {
+	position: unset !important;
+	display: flex;
+	justify-content: center;
+}
+
 #sketch {
 	width: 500px;
 	height: 500px;
