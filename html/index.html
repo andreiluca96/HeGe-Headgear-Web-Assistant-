@@ -23,31 +23,31 @@
 
                     <div class="label-container">
                         <label>Username</label>
-                        <input type="text" name="uname">
+                        <input id="username" type="text" name="uname">
                     </div>
 
                     <div class="label-container">
                         <label>Country</label>
-                        <input type="text" name="country">
+                        <input id="country" type="text" name="country">
                     </div>
 
                     <div class="label-container">
                         <label>Age</label>
-                        <input type="number" min="1" max="100" name="age">
+                        <input id="age" type="number" min="1" max="100" name="age">
                     </div>
 
                     <div class="radio-container">
                         <ul>
                           <li>
-                            <input type="radio" id="f-option" name="selector">
+                            <input type="radio" id="f-option" value="1" name="selector">
                             <label for="f-option">Female</label>
                             
                             <div class="check"></div>
                           </li>
-                          
+
                           <li>
-                            <input type="radio" id="s-option" name="selector">
-                            <label for="s-option">Male</label>
+                            <input type="radio" id="m-option" value="2" name="selector">
+                            <label for="m-option">Male</label>
                             
                             <div class="check"><div class="inside"></div></div>
                           </li>
@@ -56,7 +56,7 @@
 
                 </div>
                 <div class="button-container">
-                    <a class="start-button" type="submit" href="./main.html">Get Started</a>
+                    <a class="start-button" type="submit" onclick="saveUserCookies()" href="./main.html">Get Started</a>
                     <a class="skip-button" href="./main.html">Skip</a>
                 </div>
             </div>
@@ -64,6 +64,8 @@
         </form>
     </div>
     </div>
+
+<script src="../javascript/user_data_interaction.js"></script>
 
 </body>
 
