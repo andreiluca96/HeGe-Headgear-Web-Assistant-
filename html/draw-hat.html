@@ -6,6 +6,9 @@
 	<title> HeGe (Headgear Web Assistant) </title>
 	<link rel="stylesheet" type="text/css" href="../css/draw-hat.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script src="../clmtrackr-gh-pages/build/clmtrackr.js"></script>
+	<script src="../clmtrackr-gh-pages/examples/js/libs/utils.js"></script>
+	<script src="../clmtrackr-gh-pages/examples/js/libs/Stats.js"></script>
 </head>
 <body>
 
@@ -22,15 +25,18 @@
 		<div id="sketch">
 			<canvas id="paint"></canvas>
 		</div>
+		<div class="camera-input" id="camera">
+                <video id="inputVideo" width="320" height="240" preload autoplay loop muted></video>
+                <canvas id="overlay" width="320" height="240"></canvas>
+	    </div>
 		<div id="control-buttons">
-			<button class="control-button">Try it</button>
+			<button class="control-button" onclick="tryHat()">Try it</button>
 			<button class="control-button">Save</button>
 			<button class="control-button">Load</button>
 		</div>
 	</div>
 </div>
-
 <script src="../javascript/draw_hat.js"></script>
-
+<script src="../javascript/draw_hat_placement.js"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+body {
+	width: auto !important;
+}
 .topnav {
 	position: unset !important;
 }
