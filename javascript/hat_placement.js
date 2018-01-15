@@ -27,7 +27,6 @@ function positionLoop() {
 positionLoop();
 
 function takePhoto() {
-    console.log('take photo pressed');
     var dataURI = canvasInput.toDataURL('image/jpeg');
     var w=window.open('about:blank','image from canvas');
     w.document.write("<img src='"+dataURI+"' alt='from canvas'/>");
