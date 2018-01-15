@@ -1,11 +1,13 @@
 document.getElementById('camera').style.display = "none";
+document.getElementById('takePhoto').style.display="none";
+var canvasInput = document.getElementById('overlay');
+
 function tryHat() {
     var hatItemDiv = document.createElement('div');
     hatItemDiv.className = "hat-item-active";
     var hatImage = document.createElement("img");
     hatImage.className = "hat-image";
-
-    var canvasInput = document.getElementById('overlay');
+    
     var dataURI = canvasInput.toDataURL('image/jpeg');
     hatImage.setAttribute('src', dataURI, );
 
@@ -13,15 +15,23 @@ function tryHat() {
     document.getElementById('sketch').style.display = "none";
     document.getElementById('control-buttons').style.margin = "245px"
     document.getElementById('camera').style.display = "block";
+    document.getElementById('tryHat').style.display="none";
+    document.getElementById('takePhoto').style.display="block";
     openCamera(true);
     placeHat(true);
+}
+
+function takePhoto() {
+    var dataURI = canvasInput.toDataURL('image/jpeg');
+    var w=window.open('about:blank','image from canvas');
+    w.document.write("<img src='"+dataURI+"' alt='from canvas'/>");
+    window.open(c.toDataURL('image/png'));
 }
 
 var errorCallback = function(e) {
     console.log('Reeeejected!', e);
 };
 
-// Not showing vendor prefixes.
 function openCamera(isCameraOpened){
     if(isCameraOpened)
     {
@@ -29,10 +39,7 @@ function openCamera(isCameraOpened){
     var video = document.querySelector('video');
     video.src = window.URL.createObjectURL(localMediaStream);
 
-    // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
-    // See crbug.com/110938.
     video.onloadedmetadata = function(e) {
-      // Ready to go. Do some stuff.
     };
 }, errorCallback);
     }
