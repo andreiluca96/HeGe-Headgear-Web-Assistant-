@@ -20,6 +20,16 @@ body {
 	height: 500px;
 }
 
+video {
+	display: none !important;
+}
+
+#overlay {
+	top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #paint {
 	background-color: transparent;
 	border-style: solid;

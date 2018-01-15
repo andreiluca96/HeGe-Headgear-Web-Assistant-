@@ -11,6 +11,7 @@ function tryHat() {
 
     hatItemDiv.appendChild(hatImage);
     document.getElementById('sketch').style.display = "none";
+    document.getElementById('control-buttons').style.margin = "245px"
     document.getElementById('camera').style.display = "block";
     openCamera(true);
     placeHat(true);
