@@ -1,4 +1,4 @@
-saveUserCookies = function() {
+saveUserData = function() {
     username = document.getElementById('username').value;
     age = document.getElementById('age').value;
     country = document.getElementById('country').value;
@@ -18,5 +18,12 @@ saveUserCookies = function() {
         return;
     }
 
-    document.cookies = "username=" + username + "; age=" + age + "; country=" + country + "; sex=" + sex;
+    data = {
+        'username': username,
+        'age': age,
+        'country': country,
+        'sex': sex
+    };
+
+    localStorage.saveData = JSON.stringify(data);
 }
