@@ -3,12 +3,19 @@ var upperBound = 8;
 var currentActiveHatIndex = -1;
 
 function getUserData() {
-    var currentCountry = localStorage.getItem('saveData');
-    var parsed = JSON.parse(currentCountry);
+    var localStorageData = localStorage.getItem('saveData');
+    var jsonData = JSON.parse(localStorageData);
+    return jsonData;
 }
-getUserData();
 
 fetchHatsFunction = function(move) {
+    var userData = getUserData();
+    var photosPath = "../img/";
+    if(userData!=null)
+    {
+        photosPath = photosPath.concat(userData.country).concat('/')
+
+    }
     var width = window.innerWidth;
     var height = window.innerHeight;
 
@@ -50,7 +57,7 @@ fetchHatsFunction = function(move) {
             if (currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2 > upperBound) {
                 hatItemDiv.className += " hat-item-hidden";
             } else {
-                hatImage.setAttribute('src', "../img/".concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
+                hatImage.setAttribute('src', photosPath.concat().concat(currentActiveHatIndex - Math.round(numberOfHatsToShow / 2) + i + 2).concat(".png"));
                 hatItemDiv.setAttribute('onClick', 'changeCurrentHatItem(this)');
             }
         }
@@ -60,7 +67,6 @@ fetchHatsFunction = function(move) {
         hatItems.appendChild(hatItemDiv);
     }
 };
-
 moveLeft = function() {
     startArrow = document.getElementsByClassName('start-arrow')[0];
     startArrow.className = 'start-arrow';
