@@ -253,11 +253,9 @@ img{
     width: 95%;
     height: 14%;
     margin: 10px;
-    background-color: #F6F6FF;
+    background-color: transparent;
     border-radius: 10px;
     opacity: 0.98;
-    border: 7px solid #19be97;
-    box-shadow: 7px 7px 8px #373E40;
 }
 
 .hat-items {
