@@ -55,11 +55,19 @@
       <section typeof="sa:Results" id="introducere">
         <h2>1. Introducere</h2>
         <p>
-Un magazin (online) de accesorii de îmbrăcăminte pentru acoperit creştetul capului (bonete, căciuli, fesuri, pălării, şepci, turbane,...) intenţionează să atragă mai mulţi clienţi oferind o aplicaţie Web responsivă menită a oferi asistenţă utilizatorilor în ceea ce priveşte probarea virtuală a acestor accesorii fără a necesita prezenţa fizică. Interacţiunea Web se va baza pe realitatea îmbogăţită (AR – Augmented Reality). Suplimentar, se va pune la dispoziţie un asistent Web oferind sugestii referitoare la (tipuri de) articole vestimentare în funcţie de sezon, moda curentă ori preferinţe specifice (e.g., Tuxy adoră să poarte joben de mătase doar când nu are plete), eventual pe baza cercului de "prieteni" dintr-o reţea socială. A se parcurge şi List of headgear, plus Awesome AR.
+			Un magazin (online) de accesorii de îmbrăcăminte pentru acoperit creştetul capului (bonete, căciuli, fesuri, pălării,
+			şepci, turbane,...) intenţionează să atragă mai mulţi clienţi oferind o aplicaţie Web responsivă menită a
+			oferi asistenţă utilizatorilor în ceea ce priveşte probarea virtuală a acestor accesorii fără a necesita prezenţa fizică.
+			Interacţiunea Web se va baza pe realitatea îmbogăţită (AR – Augmented Reality).
+
+			Suplimentar, se va pune la dispoziţie un asistent Web oferind sugestii referitoare la (tipuri de) articole
+			vestimentare în funcţie de sezon, moda curentă ori preferinţe specifice (e.g., Tuxy adoră să poarte joben
+			de mătase doar când nu are plete), eventual pe baza cercului de "prieteni" dintr-o reţea socială.
+			A se parcurge şi List of headgear, plus Awesome AR.
         </p>
     </section>
-    <section id="etapeProiect">
-        <h2>2. Schite, prototip </h2>
+    <section id="arhitectura">
+        <h2>2. Arhitectura </h2>
 		<figure typeof="sa:Image6">
 			<img src="images/schita.jpg" style="width:800px;height:400px;display:inline;border: 2px solid black">
 			<figcaption align="center">
@@ -67,40 +75,78 @@ Un magazin (online) de accesorii de îmbrăcăminte pentru acoperit creştetul c
 			</figcaption>
 		</figure>
     </section>
-    <section id="arhitectura">
-		<h2>3. Interactiunea cu utilizatorul</h2>
+
+	<section id="etapeProiect">
+		<h2>3. Etape proiect</h2>
+		<ol>
+			<li>Modelarea paginilor principale (use-case)</li>
+			<li>Schitarea paginilor propriu-zise utilizand HTML5, CSS3 (fara functionalitate)</li>
+			<li>Schitarea si realizarea accesului la camera</li>
+			<li>Realizarea mecanismului de control a palariilor intr-un mod responsiv.</li>
+			<li>Realizarea mecanismului de desenare a palariilor</li>
+			<li>Studiul modalitatilor de a plasare a plariilor pe cap</li>
+			<li>Implementarea mecanismului de plasare a palariilor pe cap inclusiv cele desenate(utilziand tracking.js)</li>
+			<li>Salvarea datelor introduse de utilizatori</li>
+			<li>Oferirea de sugestii utilziatorilor bazate pe preferintele din formularul de intrare</li>
+			<li>Finisarea aspectelor de design</li>
+		</ol>
+	</section>
+
+	<section id="progresulInregistrat">
+		<h2>4. Progresul inregistrat </h2>
+		<blockquote>
+			<h3> Realizarea mecanismului de desenare a palariilor </h3>
+			<p>
+				Pentru a realiza desenarea palariilor la nivel de webcam a fost necesar sa utlizam o biblioteca care s-a ocupat de recunoasterea faciala
+				, mai exact ne-a returnat o lista de puncte (cu o anumita mappare la o zona a fetei), iar pe baza acestui rezultat, am scalat imaginile disponibile
+				in momentul afisarii. Pentru a face afisarea "per se" a palariei am utilizat un canvas peste output-ul camerei pe care am desenat imaginea.
+			</p>
+		</blockquote>
+	</section>
+
+    <section id="interactiuneUtilizator">
+		<h2>5. Interactiunea cu utilizatorul</h2>
 		
 		<blockquote>	 
 		<p>Interactiunea cu utilizatorul se va baza pe camera acestuia si de asemenea prin interfata web. Astfel, prin realitatea augumentata la care va recurge modul de prezentare a datelor, va stimula imaginatia si de asemenea va oferi utilizatorilor o experienta cat mai aproape de realitate.</p>
 		</blockquote>
 	</section>		
-    <section id="progresProiect">
-      	<h2>4. Utilizarea API-urilor externe</h2>
-        <blockquote>
-	  		<h3> Stocarea modelelor(a palariilor) </h3> 
-			<p> Pentru a stoca modelele palariilor ce vor fi utilizate mai tarziu pentru a le prezenta utilizatorilor, avem nevoie de o modalitate simpla de a stoca aceste fisiere binare. Astfel, o metoda conventionala de baze de date ar face complicata stocarea, deoarece imaginile ar trebui sa sufere o serie de transformari pentru a fi stocate. In acest sens, pentru stocare vom folosi una din cele mai populare metode la momentul actual si anume <a href="https://aws.amazon.com/documentation/s3/"> Amazon S3 </a>. </p>
+    <section id="tehnologiieUtilizate">
+		<h2>6. API-uri utilizate</h2>
+		<blockquote>
+			<h3> Git - GitHub </h3>
+			<p>
+				Git este un sistem revision control care rulează pe majoritatea platformelor, inclusiv Linux, POSIX, Windows și OS X. Ca și Mercurial, Git este un sistem distribuit și nu întreține o bază de date comună. Este folosit în echipe de dezvoltare mari, în care membrii echipei acționează oarecum independent și sunt răspândiți pe o arie geografică mare.
+			</p>
+		</blockquote>
+		<blockquote>
+			<h3> Clmtrackr </h3>
+			<p> Pentru a putea plasa palariile utilizatorilor pe capul acestora a fost necesara o metoda de recunoastere faciala cat mai permisiva si accesibila din punct de
+			vedere dimensiunii zonei recunoscute/parti ale fetei recunoscute. In acest sens am avut de ales dintre 2 variante de bibloteci care permit
+			recunoasterea faciala: tracking.js si Clmtrackr. Dat fiind faptul ca Clmtrackr ofera detalii mai exacte referitoare la caracteristicile fetei(detecteaza ochi/gura/etc.), iar tracking.js ofera doar un
+				patrat in care este detectata fata, am decis pentru a avea o solutie mai buna pentru o eventuala dezvoltare pe viitor varianta Clmtrackr.</p>
 		</blockquote>
 
-        <blockquote>
-	  		<h3> Realizarea randarilor bazate pe realitatea augumentata </h3> 
-			<p> Pentru a oferi utilizatorilor senzatia de realitate augumentata vom folosi o serie de framework-uri open-source - <a href="https://github.com/argonjs/argon">Argon JS</a>.</p>
+		<blockquote>
+			<h3> Localstorage </h3>
+			<p> Pentru a stoca datele aferente utilizatorului am avut nevoie de o metoda de stocare moderna si permisiva, astfel am preferat sa folosim Web storage(HTML5) deoarece ne permite sa serializam
+			obiecte in format JSON, similar unui tip de date NoSQL.</p>
 		</blockquote>
-		
-        <blockquote>
-	  		<h3> Realizarea unui model de predictii </h3> 
-			<p> Pentru a oferi sugestii utilizatorilor de palarii vom recurge la modele bazate pe clasificare bayesiana. Vom incerca sa etichetam manual fiecare palarie cu o serie de feature-uri, iar apoi utilizand un <a href="https://github.com/ttezel/bayes">API</a> pentru clasificare bayesiana, vom realiza predictiile. </p>
+
+		<blockquote>
+			<h3> Canvas </h3>
+			<p> O metoda de a afisa continutul intr-un mod grafic este utilizand Canvas(HTML5) ce permite o sumedenie de operatii. Am folosit-o pentru a desena palarii si de asemenea pentru
+			a realiza efectiv plasarea palariilor pe camera utilizatorului.</p>
 		</blockquote>
 	</section>
 
-	<section id="tehnologiieUtilizate">
-    	<h2>5. Managment cod sursa </h2>
-    	<blockquote>
-    		<h3> Git - GitHub </h3>
-    		<p>
-    			Git este un sistem revision control care rulează pe majoritatea platformelor, inclusiv Linux, POSIX, Windows și OS X. Ca și Mercurial, Git este un sistem distribuit și nu întreține o bază de date comună. Este folosit în echipe de dezvoltare mari, în care membrii echipei acționează oarecum independent și sunt răspândiți pe o arie geografică mare.
-    		</p>
-    	</blockquote>
-    	
-	</section>
+		<section id="membri">
+			<h2>7. Membri</h2>
+			<ol>
+				<li>Luca Andrei</li>
+				<li>Opariuc Ariana</li>
+			</ol>
+		</section>
+	</article>
 </body>
 </html>
