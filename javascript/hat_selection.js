@@ -2,6 +2,12 @@ var lowerBound = 0;
 var upperBound = 8;
 var currentActiveHatIndex = -1;
 
+function getUserData() {
+    var currentCountry = localStorage.getItem('saveData');
+    var parsed = JSON.parse(currentCountry);
+}
+getUserData();
+
 fetchHatsFunction = function(move) {
     var width = window.innerWidth;
     var height = window.innerHeight;
