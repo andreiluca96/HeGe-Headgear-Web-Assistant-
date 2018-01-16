@@ -4,7 +4,7 @@ var canvasInput = document.getElementById('overlay');
 
 function prepareToTryHat() {
     document.getElementById('sketch').style.display = "none";
-    document.getElementById('control-buttons').style.margin = "245px"
+    document.getElementById('control-buttons').style.margin = "245px";
     document.getElementById('camera').style.display = "block";
     document.getElementById('tryHat').style.display="none";
     document.getElementById('takePhoto').style.display="block";
@@ -18,7 +18,7 @@ function tryHat() {
     hatImage.className = "hat-image";
 
     var dataURI = canvasInput.toDataURL('image/jpeg');
-    hatImage.setAttribute('src', dataURI, );
+    hatImage.setAttribute('src', dataURI);
     hatItemDiv.appendChild(hatImage);
     prepareToTryHat();
     placeDrawHat();
@@ -116,7 +116,7 @@ function handleFileSelect(evt) {
                         hatImage.className = "hat-image";
 
                         var dataURI = canvasInput.toDataURL('image/jpeg');
-                        hatImage.setAttribute('src', dataURI, );
+                        hatImage.setAttribute('src', dataURI);
                         hatItemDiv.appendChild(hatImage);
 
                         document.getElementById('list').innerHTML = ['<img id="loadedImg" src="', e.target.result,'" title="', theFile.name, 'width="320" height="240" />'].join('');
