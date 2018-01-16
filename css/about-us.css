@@ -1,4 +1,5 @@
 body {
+	font-family: 'Ribeye Marrow';
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
@@ -23,7 +24,7 @@ h1 {
 	font-size: 2.5em;
     margin-bottom: 0px;
     text-align: center;
-    font-family: "Palatino Linotype";
+    font-family: 'Ribeye Marrow';
     color: #F6F6FF;
 }
 .topnav {
@@ -70,11 +71,11 @@ img:hover {
 	height: 180px;
 }
 .avatar-container h1 {
-	font-family: "Palatino Linotype";
+	font-family: 'Ribeye Marrow';
     color: #19be97;
 }
 .avatar-contaier .text-field {
 	color: #19be97;
 	display: flex;
-	font-family: "Palatino Linotype";
+	font-family: 'Ribeye Marrow';
 }

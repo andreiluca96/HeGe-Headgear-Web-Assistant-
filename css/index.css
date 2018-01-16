@@ -1,4 +1,6 @@
 body {
+	font-family: 'Ribeye Marrow';
+	font-size: 22px;
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
@@ -27,7 +29,6 @@ body {
 }
 h1 {
 	text-align: center;
-    font-family: "Palatino Linotype";
     color: #F6F6FF;
 }
 
@@ -40,7 +41,6 @@ h1 {
 }
 
 .form-container h3{
-	font-family: "Palatino Linotype";
 	color: #3A405A
 }
 
@@ -62,7 +62,6 @@ h1 {
 }
 
 .label-container label{
-	font-family: "Palatino Linotype";
 	font-size: 17px;
 	color: #3A405A;
 	padding-bottom: inherit;
@@ -72,6 +71,12 @@ h1 {
 	padding: 4px;
 
 }
+
+.label-container select{
+	padding: 4px;
+
+}
+
 .radio-container {
 	display: flex;
 	justify-content: center;
@@ -114,12 +119,15 @@ h1 {
 	background-color: #1BA38E;
 }
 
+a{
+	text-decoration: none;
+}
+
 ul li{
 	color: #AAAAAA;
 	display: block;
 	position: relative;
 	float: left;
-  	font-family: "Palatino Linotype";
 	font-size: 15px;
 }
 
