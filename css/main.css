@@ -282,18 +282,17 @@ img{
 }
 
 button {
-  color: #2A2F96;
-  border: 2px solid #2A2F96;
-  padding: 8px 40px
-  border-radius: 5px;
-  background-color: #F6F6FF;
+  font-family: 'Ribeye Marrow';
+    margin: 25px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #4286f4;
+    box-shadow: 2px 3px #888888;
 }
 
- button:hover {
-  color: #F6F6FF;
-  background-color: #2A2F96;
+button:hover {
+    background: #41d9f4;
 }
-
 .hat-item:hover {
     opacity: 0.9;
 }

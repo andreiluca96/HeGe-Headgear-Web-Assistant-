@@ -49,6 +49,7 @@ video {
 }
 
 .control-button {
+	font-family: 'Ribeye Marrow';
     margin: 25px;
     padding: 10px 25px;
     border-radius: 5px;
@@ -58,4 +59,7 @@ video {
 
 .control-button:hover {
     background: #41d9f4;
+}
+input {
+	font-family: 'Ribeye Marrow';
 }
