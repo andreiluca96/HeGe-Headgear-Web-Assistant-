@@ -14,13 +14,13 @@
 
 <body>
 <div class="title-form-container">
-    <h1>Wellcome to HeGe</h1>
+    <h1>Welcome to HeGe</h1>
     <div class="form-container" id="id-form">
         <form>
 
             <div class="title-field-container">
                 <h3>Customize your hat based on your details</h3>
-
+                <h4>The first thing to do is to select which category of hats do you want to try. After you click the Get Started button you will be able to try the hats for that category.</h4>
                 <div class="field-container">
 
                     <div class="label-container">
@@ -29,42 +29,17 @@
                     </div>
 
                     <div class="label-container">
-                        <label>Country</label>
-                        <select id="country">
-                            <option value="romania">Romania</option>
-                            <option value="america">America</option>
-                            <option value="china">China</option>
-                            <option value="mexic">Spain</option>
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="Kids">Kids</option>
+                            <option value="Countries">Countries</option>
+                            <option value="SuperHero">Super Hero</option>
                         </select>
-                    </div>
-
-                    <div class="label-container">
-                        <label>Age</label>
-                        <input id="age" type="number" min="1" max="100" name="age">
-                    </div>
-
-                    <div class="radio-container">
-                        <ul>
-                          <li>
-                            <input type="radio" id="f-option" value="1" name="selector">
-                            <label for="f-option">Female</label>
-                            
-                            <div class="check"></div>
-                          </li>
-
-                          <li>
-                            <input type="radio" id="m-option" value="2" name="selector">
-                            <label for="m-option">Male</label>
-                            
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                        </ul>
                     </div>
 
                 </div>
                 <div class="button-container">
                     <a class="start-button" type="submit" onclick="saveUserData()" href="./main.html">Get Started</a>
-                    <a class="skip-button" href="./main.html">Skip</a>
                 </div>
             </div>
             

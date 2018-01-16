@@ -13,7 +13,7 @@ fetchHatsFunction = function(move) {
     var photosPath = "../img/";
     if(userData!=null)
     {
-        photosPath = photosPath.concat(userData.country).concat('/')
+        photosPath = photosPath.concat(userData.category).concat('/')
 
     }
     var width = window.innerWidth;
