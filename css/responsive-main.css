@@ -329,3 +329,8 @@ button:hover {
     padding: 10px;
     margin-bottom: 20px;
 }
+@media(max-width: 845px){
+  #logo{
+    display: none;
+  }
+}
