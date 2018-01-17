@@ -64,7 +64,7 @@ function drawLoop() {
     if (ctracker.getCurrentPosition()) {
         var positions = ctracker.getCurrentPosition();
         cc.drawImage(videoInput, 0, 0, 320, 240);
-        ctracker.draw(overlay);
+        /*ctracker.draw(overlay);*/
         cc.drawImage(currentHatImg, positions[14][0] - (positions[0][0] - positions[14][0])*0.3, positions[0][1], (positions[0][0] - positions[14][0]) * 1.4, (positions[0][1] - positions[7][1]) * 1.3);
     }
 }
