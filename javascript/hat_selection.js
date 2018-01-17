@@ -1,5 +1,5 @@
 var lowerBound = 0;
-var upperBound = 8;
+var upperBound = 4;
 var currentActiveHatIndex = -1;
 
 function getUserData() {
@@ -14,7 +14,6 @@ fetchHatsFunction = function(move) {
     if(userData!=null)
     {
         photosPath = photosPath.concat(userData.category).concat('/')
-
     }
     var width = window.innerWidth;
     var height = window.innerHeight;
@@ -90,19 +89,23 @@ moveRight = function() {
 
 changeCurrentHatItem = function(element) {
     imgElement = element.childNodes[0];
+    console.log(element);
     startingFileNameIndex = imgElement.getAttribute('src').lastIndexOf('/');
     extensionFileNameIndex = imgElement.getAttribute('src').lastIndexOf('.');
+    console.log(startingFileNameIndex);
+    console.log(extensionFileNameIndex);
 
+    console.log(imgElement.getAttribute('src').substr(startingFileNameIndex + 1, 1));
     move = 0;
 
-    if (currentActiveHatIndex <= imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
+    if (currentActiveHatIndex <= imgElement.getAttribute('src').substr(startingFileNameIndex + 1, 1)) {
         move = 1;
     }
-    if (currentActiveHatIndex > imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7)) {
+    if (currentActiveHatIndex > imgElement.getAttribute('src').substr(startingFileNameIndex + 1, 1)) {
         move = -1;
     }
 
-    currentActiveHatIndex = imgElement.getAttribute('src').substr(startingFileNameIndex + 1, extensionFileNameIndex - 7);
+    currentActiveHatIndex = imgElement.getAttribute('src').substr(startingFileNameIndex + 1, 1)
     currentActiveHatIndex--;
     fetchHatsFunction(move);
 };
