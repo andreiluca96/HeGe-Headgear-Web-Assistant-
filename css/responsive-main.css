@@ -1,0 +1,335 @@
+body {
+  font-family: 'Ribeye Marrow';
+  color: #fff;
+  background: linear-gradient(-45deg, #a23716, #7f6a72, #295c6e, #23D5AB);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+}
+
+video, canvas {
+    position: absolute;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+/* Animate.css with small changes */
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 1;
+    transform: translate3d(-100px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(5px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+/* Animate.css with small changes */
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 1;
+    transform: translate3d(120px, 0, 0);
+  }
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+/* Animate.css with small changes */
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes infinitySwing {
+  2% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  4% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  6% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  8% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  10% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+#logo {
+  display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.topnav #logo h1 {
+    font-family: 'Ribeye Marrow';
+    margin: 7px;
+    float: left;
+    text-align: center;
+    color: #F6F6FF;
+}
+
+img{
+    width: 30px;;
+    height: 60px;
+    opacity: 0.8;
+}
+
+.paint-tools:hover, .pencil:hover{
+  opacity: 1;
+}
+
+
+.side-bar{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 15px;
+}
+.avatar-1:hover{
+  opacity: 1;
+}
+.avatar-1:hover + img {
+  opacity: 1;
+}
+.about-us{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.logo-img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #F6F6FF;
+    text-align: center;
+    padding: 25px 30px;
+    margin-top: 0px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #DFCC74;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #F6F6FF;
+    color: white;
+}
+
+.main-screen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.camera-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6FF;
+    border-radius: 10px;
+    opacity: 0.96;
+}
+
+.camera-input video {
+    opacity: 1;
+}
+
+.hat-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 10px;
+    opacity: 0.98;
+    margin-top: 92px;
+}
+
+.hat-items {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.hat-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+    border-radius: 10px;
+    width: 100px;
+    opacity: 0.6;
+    background: #ffffff;
+    animation-name: swing;
+    animation-duration: 0.25s;
+    border-radius: 26px;
+    border: 3px solid #19be97;
+}
+
+button {
+  font-family: 'Ribeye Marrow';
+    margin: 25px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #4286f4;
+    box-shadow: 2px 3px #888888;
+}
+
+button:hover {
+    background: #41d9f4;
+}
+.hat-item:hover {
+    opacity: 0.9;
+}
+
+.hat-item-active {
+    opacity: 1;
+    box-shadow: 3px 3px 15px black;
+}
+
+.hat-item-hidden {
+    visibility: hidden;
+}
+
+.hat-item-left-animation {
+    animation-duration: 0.2s;
+    animation-name: bounceInLeft;
+}
+
+.hat-item-right-animation {
+    animation-duration: 0.2s;
+    animation-name: bounceInRight;
+}
+
+.hat-image {
+    width: 90px;
+    height: 80px;
+}
+
+.start-arrow {
+    margin-left: 20px;
+}
+.start-arrow, .end-arrow {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 50px;   
+    animation: infinitySwing 5s infinite;
+}
+
+.start-arrow-active {
+    animation: swing 0.25s;
+}
+
+#left-arrow {
+    transform: scaleX(-1);
+    width: 50px;
+    height: 30px;
+}
+.end-arrow {
+    margin-right: 20px;
+}
+
+.end-arrow-active {
+    animation: swing 0.25s;
+}
+
+#right-arrow {
+    margin-left: 5px;
+    width: 50px;
+    height: 30px;
+}
+
+.end-arrow:hover,.start-arrow:hover {
+    animation: swing 0.25s;
+}
+#take-photo {
+    align-self: flex-end;
+    padding: 10px;
+    margin-bottom: 100px;
+}
