@@ -10,7 +10,7 @@ saveUserData = function() {
         'username': username,
         'category': category,
     };
-
+    deleteUserData();
     localStorage.saveData = JSON.stringify(data);
 };
 

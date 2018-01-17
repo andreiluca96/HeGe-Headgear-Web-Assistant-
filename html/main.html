@@ -27,10 +27,10 @@
 	           		<img class="pencil" src="../img/edit.svg" onclick="navigateToIndex()" alt="pencil">
 	            </div>
 	    <div class="main-screen">
+	    	<button id="take-photo" onclick="takePhoto()">Take a photo</button>
 	    	<div class="camera-input">
                 <video id="inputVideo" width="320" height="240" preload autoplay loop muted></video>
                 <canvas id="overlay" width="320" height="240"></canvas>
-				<button id="take-photo" onclick="takePhoto()">Take a photo</button>
 	    	</div>
 	    	<div class="hat-selector">
 	    		<div class="start-arrow" onclick="moveLeft()">

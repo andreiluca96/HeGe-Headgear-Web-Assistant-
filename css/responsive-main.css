@@ -202,7 +202,7 @@ img{
     align-items: center;
     justify-content: center;
     opacity: 0.9;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -227,7 +227,7 @@ img{
     background-color: transparent;
     border-radius: 10px;
     opacity: 0.98;
-    margin-top: 92px;
+    margin-top: 170px;
 }
 
 .hat-items {
@@ -253,11 +253,8 @@ img{
 
 button {
   font-family: 'Ribeye Marrow';
-    margin: 25px;
-    padding: 10px 25px;
-    border-radius: 5px;
-    background: #4286f4;
-    box-shadow: 2px 3px #888888;
+  position: relative;
+  top:-120px;
 }
 
 button:hover {
@@ -329,7 +326,6 @@ button:hover {
     animation: swing 0.25s;
 }
 #take-photo {
-    align-self: flex-end;
     padding: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
